@@ -1,0 +1,12 @@
+{
+  "name": "receipts",
+  "version": "0.1.0",
+  "description": "Auto-extract order info from Amazon, DoorDash, Uber, Flipkart and save to a local ledger.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "echo 'no-op'",
+    "test": "node scripts/smoke.mjs",
+    "build": "echo 'no-op'"
+  }
+}
