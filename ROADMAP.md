@@ -20,7 +20,7 @@ This file is the agent's task queue. Unchecked items get implemented in order. W
 
 ## Extractors — Tier 1 (high-volume, must work)
 - [x] amazon-in extractor
-- [ ] amazon-us extractor
+- [x] amazon-us extractor
 - [ ] amazon-uk extractor
 - [ ] amazon-ca extractor
 - [ ] flipkart extractor
