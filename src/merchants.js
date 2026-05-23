@@ -13,7 +13,7 @@ export const MERCHANTS = [
   { id: "ajio", name: "Ajio", country: "IN", category: "fashion", hostPattern: "https://www.ajio.com/*", orderUrlPattern: "/my-account/orders*", status: "planned" },
   { id: "meesho", name: "Meesho", country: "IN", category: "marketplace", hostPattern: "https://www.meesho.com/*", orderUrlPattern: "/orders*", status: "supported" },
   { id: "snapdeal", name: "Snapdeal", country: "IN", category: "marketplace", hostPattern: "https://www.snapdeal.com/*", orderUrlPattern: "/orders*", status: "planned" },
-  { id: "tatacliq", name: "Tata CLiQ", country: "IN", category: "marketplace", hostPattern: "https://www.tatacliq.com/*", orderUrlPattern: "/my-account/orders*", status: "planned" },
+  { id: "tatacliq", name: "Tata CLiQ", country: "IN", category: "marketplace", hostPattern: "https://www.tatacliq.com/*", orderUrlPattern: "/my-account/orders*", status: "supported" },
   { id: "nykaa", name: "Nykaa", country: "IN", category: "beauty", hostPattern: "https://www.nykaa.com/*", orderUrlPattern: "/myaccount/orders*", status: "supported" },
   { id: "nykaa-fashion", name: "Nykaa Fashion", country: "IN", category: "fashion", hostPattern: "https://www.nykaafashion.com/*", orderUrlPattern: "/orders*", status: "planned" },
   { id: "firstcry", name: "FirstCry", country: "IN", category: "kids", hostPattern: "https://www.firstcry.com/*", orderUrlPattern: "/myorders*", status: "planned" },
