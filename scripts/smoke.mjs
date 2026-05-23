@@ -39,6 +39,7 @@ await import("../tests/extractors/ubereats-us.test.mjs");
 await import("../tests/extractors/deliveroo.test.mjs");
 await import("../tests/extractors/swiggy.test.mjs");
 await import("../tests/extractors/zomato.test.mjs");
+await import("../tests/extractors/instacart.test.mjs");
 await import("../tests/currency.test.mjs");
 if (!fs.existsSync("src/extractors/amazon-in.js")) { console.error("missing src/extractors/amazon-in.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/amazon-us.js")) { console.error("missing src/extractors/amazon-us.js"); process.exit(1); }
@@ -52,4 +53,5 @@ if (!fs.existsSync("src/extractors/ubereats-us.js")) { console.error("missing sr
 if (!fs.existsSync("src/extractors/deliveroo.js")) { console.error("missing src/extractors/deliveroo.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/swiggy.js")) { console.error("missing src/extractors/swiggy.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/zomato.js")) { console.error("missing src/extractors/zomato.js"); process.exit(1); }
+if (!fs.existsSync("src/extractors/instacart.js")) { console.error("missing src/extractors/instacart.js"); process.exit(1); }
 console.log("\u2713 smoke ok");
