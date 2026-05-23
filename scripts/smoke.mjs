@@ -16,7 +16,9 @@ if (!fs.existsSync("src/currency.js")) { console.error("missing src/currency.js"
 if (!fs.existsSync("src/merchants.js")) { console.error("missing src/merchants.js"); process.exit(1); }
 if (!fs.existsSync("src/site-detect.js")) { console.error("missing src/site-detect.js"); process.exit(1); }
 if (!fs.existsSync("src/extractor.js")) { console.error("missing src/extractor.js"); process.exit(1); }
+if (!fs.existsSync("src/store.js")) { console.error("missing src/store.js"); process.exit(1); }
 await import("../tests/site-detect.test.mjs");
 await import("../tests/extractor.test.mjs");
+await import("../tests/store.test.mjs");
 await import("../tests/currency.test.mjs");
 console.log("\u2713 smoke ok");
