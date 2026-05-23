@@ -7,6 +7,7 @@ import {
   buildFilterOptions,
   buildStoreFilter,
 } from "./popup-filters.js";
+import { createEmptyState } from "./popup-empty.js";
 
 const store = createStore();
 const ui = { q: "", merchantId: "*", country: "*", currency: "*", dateFrom: "", dateTo: "" };
@@ -50,45 +51,7 @@ function fmtMoney(amount, currency) {
 
 // ── rendering ─────────────────────────────────────────────────────────────
 function renderEmpty(filtered) {
-  return el("div", { class: "empty" },
-    svgIllustration(),
-    el("div", { class: "empty-title" }, filtered ? "No receipts match your filters" : "No receipts yet"),
-    el("div", { class: "empty-sub" },
-      filtered
-        ? "Try clearing the search or widening the date range."
-        : "Visit a supported store's order page — Amazon, DoorDash, Flipkart and more — and your receipts will land here."),
-  );
-}
-
-function svgIllustration() {
-  // Hand-drawn-feeling receipt illustration.
-  const ns = "http://www.w3.org/2000/svg";
-  const svg = document.createElementNS(ns, "svg");
-  svg.setAttribute("viewBox", "0 0 120 120");
-  svg.setAttribute("fill", "none");
-  svg.setAttribute("stroke", "currentColor");
-  svg.setAttribute("stroke-width", "1.5");
-  svg.setAttribute("stroke-linecap", "round");
-  svg.setAttribute("stroke-linejoin", "round");
-  svg.innerHTML = `
-    <defs>
-      <linearGradient id="rg" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="currentColor" stop-opacity="0.10"/>
-        <stop offset="100%" stop-color="currentColor" stop-opacity="0.02"/>
-      </linearGradient>
-    </defs>
-    <path d="M34 16 L34 104 L42 98 L50 104 L58 98 L66 104 L74 98 L82 104 L82 16 L74 22 L66 16 L58 22 L50 16 L42 22 Z"
-          fill="url(#rg)" stroke="currentColor"/>
-    <path d="M44 34 H72" opacity="0.7"/>
-    <path d="M44 44 H68" opacity="0.55"/>
-    <path d="M44 54 H70" opacity="0.55"/>
-    <path d="M44 64 H60" opacity="0.45"/>
-    <path d="M44 78 H56" opacity="0.7"/>
-    <path d="M62 78 H72" opacity="0.7"/>
-    <circle cx="92" cy="86" r="14" stroke-dasharray="2 3" opacity="0.55"/>
-    <path d="M86 86 L91 91 L99 82" opacity="0.85"/>
-  `;
-  return svg;
+  return createEmptyState({ variant: filtered ? "filtered" : "initial" });
 }
 
 function renderCard(r) {

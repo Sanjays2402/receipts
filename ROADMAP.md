@@ -13,7 +13,7 @@ This file is the agent's task queue. Unchecked items get implemented in order. W
 - [x] Popup: list captured receipts with search + filter (merchant, country, currency, date range)
 - [x] Liquid-glass popup UI (frosted, ambient blob, Phosphor icons)
 - [x] Dark/light theme parity
-- [ ] Empty state with hand-drawn SVG illustration
+- [x] Empty state with hand-drawn SVG illustration
 - [ ] Receipt detail drawer with line items, totals, raw HTML
 - [ ] User preferred-display-currency setting; show both native + converted
 - [ ] Background FX refresh (host: open.er-api.com), 24h cache
