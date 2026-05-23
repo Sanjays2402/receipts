@@ -36,7 +36,7 @@ This file is the agent's task queue. Unchecked items get implemented in order. W
 ## Extractors — Tier 2 (top marketplace per country)
 - [x] myntra extractor
 - [x] ajio extractor
-- [ ] meesho extractor
+- [x] meesho extractor
 - [ ] nykaa extractor
 - [ ] tatacliq extractor
 - [ ] bigbasket extractor

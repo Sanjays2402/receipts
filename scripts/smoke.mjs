@@ -42,6 +42,7 @@ await import("../tests/extractors/zomato.test.mjs");
 await import("../tests/extractors/instacart.test.mjs");
 await import("../tests/extractors/myntra.test.mjs");
 await import("../tests/extractors/ajio.test.mjs");
+await import("../tests/extractors/meesho.test.mjs");
 await import("../tests/currency.test.mjs");
 if (!fs.existsSync("src/extractors/amazon-in.js")) { console.error("missing src/extractors/amazon-in.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/amazon-us.js")) { console.error("missing src/extractors/amazon-us.js"); process.exit(1); }
@@ -58,4 +59,5 @@ if (!fs.existsSync("src/extractors/zomato.js")) { console.error("missing src/ext
 if (!fs.existsSync("src/extractors/instacart.js")) { console.error("missing src/extractors/instacart.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/myntra.js")) { console.error("missing src/extractors/myntra.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/ajio.js")) { console.error("missing src/extractors/ajio.js"); process.exit(1); }
+if (!fs.existsSync("src/extractors/meesho.js")) { console.error("missing src/extractors/meesho.js"); process.exit(1); }
 console.log("\u2713 smoke ok");
