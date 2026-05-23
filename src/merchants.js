@@ -25,7 +25,7 @@ export const MERCHANTS = [
   { id: "dunzo", name: "Dunzo", country: "IN", category: "quickcommerce", hostPattern: "https://www.dunzo.com/*", orderUrlPattern: "/orders*", status: "planned" },
   // Food delivery
   { id: "swiggy", name: "Swiggy", country: "IN", category: "food", hostPattern: "https://www.swiggy.com/*", orderUrlPattern: "/my-account/orders*", status: "planned" },
-  { id: "zomato", name: "Zomato", country: "IN", category: "food", hostPattern: "https://www.zomato.com/*", orderUrlPattern: "/users/*/orders*", status: "planned" },
+  { id: "zomato", name: "Zomato", country: "IN", category: "food", hostPattern: "https://www.zomato.com/*", orderUrlPattern: "/users/*/orders*", status: "supported" },
   // Electronics
   { id: "croma", name: "Croma", country: "IN", category: "electronics", hostPattern: "https://www.croma.com/*", orderUrlPattern: "/my-account/orders*", status: "planned" },
   { id: "reliance-digital", name: "Reliance Digital", country: "IN", category: "electronics", hostPattern: "https://www.reliancedigital.in/*", orderUrlPattern: "/myaccount/orders*", status: "planned" },

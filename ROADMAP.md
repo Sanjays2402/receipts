@@ -29,7 +29,7 @@ This file is the agent's task queue. Unchecked items get implemented in order. W
 - [x] doordash extractor
 - [x] ubereats-us extractor
 - [x] swiggy extractor
-- [ ] zomato extractor
+- [x] zomato extractor
 - [ ] deliveroo extractor
 - [ ] instacart extractor
 

@@ -37,6 +37,7 @@ await import("../tests/extractors/target.test.mjs");
 await import("../tests/extractors/doordash.test.mjs");
 await import("../tests/extractors/ubereats-us.test.mjs");
 await import("../tests/extractors/swiggy.test.mjs");
+await import("../tests/extractors/zomato.test.mjs");
 await import("../tests/currency.test.mjs");
 if (!fs.existsSync("src/extractors/amazon-in.js")) { console.error("missing src/extractors/amazon-in.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/amazon-us.js")) { console.error("missing src/extractors/amazon-us.js"); process.exit(1); }
@@ -48,4 +49,5 @@ if (!fs.existsSync("src/extractors/target.js")) { console.error("missing src/ext
 if (!fs.existsSync("src/extractors/doordash.js")) { console.error("missing src/extractors/doordash.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/ubereats-us.js")) { console.error("missing src/extractors/ubereats-us.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/swiggy.js")) { console.error("missing src/extractors/swiggy.js"); process.exit(1); }
+if (!fs.existsSync("src/extractors/zomato.js")) { console.error("missing src/extractors/zomato.js"); process.exit(1); }
 console.log("\u2713 smoke ok");
