@@ -37,7 +37,7 @@ This file is the agent's task queue. Unchecked items get implemented in order. W
 - [x] myntra extractor
 - [x] ajio extractor
 - [x] meesho extractor
-- [ ] nykaa extractor
+- [x] nykaa extractor
 - [ ] tatacliq extractor
 - [ ] bigbasket extractor
 - [ ] blinkit extractor
