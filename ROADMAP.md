@@ -19,7 +19,7 @@ This file is the agent's task queue. Unchecked items get implemented in order. W
 - [x] Background FX refresh (host: open.er-api.com), 24h cache
 
 ## Extractors — Tier 1 (high-volume, must work)
-- [ ] amazon-in extractor
+- [x] amazon-in extractor
 - [ ] amazon-us extractor
 - [ ] amazon-uk extractor
 - [ ] amazon-ca extractor
