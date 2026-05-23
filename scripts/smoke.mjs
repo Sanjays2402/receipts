@@ -32,10 +32,12 @@ await import("../tests/extractors/amazon-us.test.mjs");
 await import("../tests/extractors/amazon-uk.test.mjs");
 await import("../tests/extractors/amazon-ca.test.mjs");
 await import("../tests/extractors/flipkart.test.mjs");
+await import("../tests/extractors/walmart.test.mjs");
 await import("../tests/currency.test.mjs");
 if (!fs.existsSync("src/extractors/amazon-in.js")) { console.error("missing src/extractors/amazon-in.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/amazon-us.js")) { console.error("missing src/extractors/amazon-us.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/amazon-uk.js")) { console.error("missing src/extractors/amazon-uk.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/amazon-ca.js")) { console.error("missing src/extractors/amazon-ca.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/flipkart.js")) { console.error("missing src/extractors/flipkart.js"); process.exit(1); }
+if (!fs.existsSync("src/extractors/walmart.js")) { console.error("missing src/extractors/walmart.js"); process.exit(1); }
 console.log("\u2713 smoke ok");

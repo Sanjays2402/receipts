@@ -24,7 +24,7 @@ This file is the agent's task queue. Unchecked items get implemented in order. W
 - [x] amazon-uk extractor
 - [x] amazon-ca extractor
 - [x] flipkart extractor
-- [ ] walmart extractor
+- [x] walmart extractor
 - [ ] target extractor
 - [ ] doordash extractor
 - [ ] ubereats-us extractor
