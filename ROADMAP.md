@@ -2,7 +2,7 @@
 
 This file is the agent's task queue. Unchecked items get implemented in order. When all items are checked, the agent appends a new batch of 10.
 
-- [ ] MV3 manifest + content script scaffolding
+- [x] MV3 manifest + content script scaffolding
 - [ ] Detect order confirmation page on Amazon (US + IN)
 - [ ] Detect order page on DoorDash, UberEats, Flipkart
 - [ ] Extract line items: name, qty, price, total, date, order ID
