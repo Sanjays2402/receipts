@@ -8,7 +8,7 @@ This file is the agent's task queue. Unchecked items get implemented in order. W
 - [x] Wire `host_permissions` from registry
 - [x] Currency support: 38 currencies, formatMoney/parseMoney/convert, pinned FX rates
 - [x] Site detection helper (match current URL → merchant)
-- [ ] Generic extractor interface (`extractOrder(document) → Receipt`)
+- [x] Generic extractor interface (`extractOrder(document) → Receipt`)
 - [ ] IndexedDB store: `receipts` (id, merchantId, date, total, currency, items[], raw)
 - [ ] Popup: list captured receipts with search + filter (merchant, country, currency, date range)
 - [ ] Liquid-glass popup UI (frosted, ambient blob, Phosphor icons)
