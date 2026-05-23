@@ -20,5 +20,6 @@ if (!fs.existsSync("src/store.js")) { console.error("missing src/store.js"); pro
 await import("../tests/site-detect.test.mjs");
 await import("../tests/extractor.test.mjs");
 await import("../tests/store.test.mjs");
+await import("../tests/popup-filters.test.mjs");
 await import("../tests/currency.test.mjs");
 console.log("\u2713 smoke ok");

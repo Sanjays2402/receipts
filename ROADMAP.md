@@ -10,7 +10,7 @@ This file is the agent's task queue. Unchecked items get implemented in order. W
 - [x] Site detection helper (match current URL → merchant)
 - [x] Generic extractor interface (`extractOrder(document) → Receipt`)
 - [x] IndexedDB store: `receipts` (id, merchantId, date, total, currency, items[], raw)
-- [ ] Popup: list captured receipts with search + filter (merchant, country, currency, date range)
+- [x] Popup: list captured receipts with search + filter (merchant, country, currency, date range)
 - [ ] Liquid-glass popup UI (frosted, ambient blob, Phosphor icons)
 - [ ] Dark/light theme parity
 - [ ] Empty state with hand-drawn SVG illustration
