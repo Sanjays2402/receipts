@@ -207,6 +207,11 @@ body[data-theme="light"] .field input[type="date"] {
   border-color: rgba(124, 156, 255, 0.35);
   transform: translateY(-1px);
 }
+.card:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 2px;
+  border-color: rgba(124, 156, 255, 0.5);
+}
 body[data-theme="light"] .card {
   background: rgba(255, 255, 255, 0.55);
   border-color: rgba(20, 20, 30, 0.06);
@@ -253,3 +258,14 @@ body[data-theme="light"] .card:hover { background: rgba(255, 255, 255, 0.85); }
 }
 body[data-theme="light"] .footer { border-top-color: rgba(20, 20, 30, 0.06); }
 .result-count { font-variant-numeric: tabular-nums; }
+
+/* ── motion preferences ──────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .filter-panel { animation: none; }
+}
+
