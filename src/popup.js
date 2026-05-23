@@ -188,8 +188,7 @@ function bind() {
 
   $("#theme-btn").addEventListener("click", () => {
     const cur = document.body.dataset.theme === "light" ? "dark" : "light";
-    document.body.dataset.theme = cur;
-    try { localStorage.setItem("receipts:theme", cur); } catch {}
+    applyTheme(cur, /* persist */ true);
   });
 
   $("#settings-btn").addEventListener("click", () => {
@@ -197,10 +196,43 @@ function bind() {
     if (chrome?.runtime?.openOptionsPage) chrome.runtime.openOptionsPage();
   });
 
+  // Initial theme: saved preference > system preference > dark default.
+  let initial = "dark";
   try {
     const saved = localStorage.getItem("receipts:theme");
-    if (saved === "light" || saved === "dark") document.body.dataset.theme = saved;
+    if (saved === "light" || saved === "dark") {
+      initial = saved;
+    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
+      initial = "light";
+    }
   } catch {}
+  applyTheme(initial, /* persist */ false);
+
+  // Follow system changes only when user has not pinned a preference.
+  try {
+    const mq = window.matchMedia("(prefers-color-scheme: light)");
+    const onChange = (e) => {
+      let pinned = null;
+      try { pinned = localStorage.getItem("receipts:theme"); } catch {}
+      if (pinned !== "light" && pinned !== "dark") applyTheme(e.matches ? "light" : "dark", false);
+    };
+    if (mq.addEventListener) mq.addEventListener("change", onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+  } catch {}
+}
+
+function applyTheme(theme, persist) {
+  const t = theme === "light" ? "light" : "dark";
+  document.body.dataset.theme = t;
+  const btn = document.getElementById("theme-btn");
+  if (btn) {
+    btn.setAttribute("aria-label", t === "light" ? "Switch to dark theme" : "Switch to light theme");
+    btn.title = t === "light" ? "Switch to dark theme" : "Switch to light theme";
+    btn.setAttribute("aria-pressed", t === "light" ? "true" : "false");
+  }
+  if (persist) {
+    try { localStorage.setItem("receipts:theme", t); } catch {}
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {

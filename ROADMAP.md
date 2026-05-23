@@ -12,7 +12,7 @@ This file is the agent's task queue. Unchecked items get implemented in order. W
 - [x] IndexedDB store: `receipts` (id, merchantId, date, total, currency, items[], raw)
 - [x] Popup: list captured receipts with search + filter (merchant, country, currency, date range)
 - [x] Liquid-glass popup UI (frosted, ambient blob, Phosphor icons)
-- [ ] Dark/light theme parity
+- [x] Dark/light theme parity
 - [ ] Empty state with hand-drawn SVG illustration
 - [ ] Receipt detail drawer with line items, totals, raw HTML
 - [ ] User preferred-display-currency setting; show both native + converted
