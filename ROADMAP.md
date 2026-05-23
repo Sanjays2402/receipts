@@ -16,7 +16,7 @@ This file is the agent's task queue. Unchecked items get implemented in order. W
 - [x] Empty state with hand-drawn SVG illustration
 - [x] Receipt detail drawer with line items, totals, raw HTML
 - [x] User preferred-display-currency setting; show both native + converted
-- [ ] Background FX refresh (host: open.er-api.com), 24h cache
+- [x] Background FX refresh (host: open.er-api.com), 24h cache
 
 ## Extractors — Tier 1 (high-volume, must work)
 - [ ] amazon-in extractor
