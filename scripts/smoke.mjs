@@ -29,7 +29,9 @@ await import("../tests/popup-display-currency.test.mjs");
 await import("../tests/fx-cache.test.mjs");
 await import("../tests/extractors/amazon-in.test.mjs");
 await import("../tests/extractors/amazon-us.test.mjs");
+await import("../tests/extractors/amazon-uk.test.mjs");
 await import("../tests/currency.test.mjs");
 if (!fs.existsSync("src/extractors/amazon-in.js")) { console.error("missing src/extractors/amazon-in.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/amazon-us.js")) { console.error("missing src/extractors/amazon-us.js"); process.exit(1); }
+if (!fs.existsSync("src/extractors/amazon-uk.js")) { console.error("missing src/extractors/amazon-uk.js"); process.exit(1); }
 console.log("\u2713 smoke ok");
