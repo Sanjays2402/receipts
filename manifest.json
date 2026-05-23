@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Receipts",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "200+ merchants across India, USA, Canada, and the UK \u2014 auto-extracts line items from order pages into a local, encrypted ledger. Export to CSV/QuickBooks/Xero.",
   "permissions": [
     "storage",
@@ -209,7 +209,8 @@
     "https://www.overclockers.co.uk/*",
     "https://www.ebuyer.com/*",
     "https://www.costco.co.uk/*",
-    "https://www.selfridges.com/*"
+    "https://www.selfridges.com/*",
+    "https://open.er-api.com/*"
   ],
   "action": {
     "default_popup": "src/popup.html",

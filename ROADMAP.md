@@ -6,14 +6,17 @@ This file is the agent's task queue. Unchecked items get implemented in order. W
 - [x] MV3 manifest + content script scaffolding
 - [x] Merchant registry: 200 retailers (IN, US, CA, UK) at `src/merchants.js`
 - [x] Wire `host_permissions` from registry
+- [x] Currency support: 38 currencies, formatMoney/parseMoney/convert, pinned FX rates
 - [ ] Site detection helper (match current URL → merchant)
 - [ ] Generic extractor interface (`extractOrder(document) → Receipt`)
 - [ ] IndexedDB store: `receipts` (id, merchantId, date, total, currency, items[], raw)
-- [ ] Popup: list captured receipts with search + filter (merchant, country, date range)
+- [ ] Popup: list captured receipts with search + filter (merchant, country, currency, date range)
 - [ ] Liquid-glass popup UI (frosted, ambient blob, Phosphor icons)
 - [ ] Dark/light theme parity
 - [ ] Empty state with hand-drawn SVG illustration
 - [ ] Receipt detail drawer with line items, totals, raw HTML
+- [ ] User preferred-display-currency setting; show both native + converted
+- [ ] Background FX refresh (host: open.er-api.com), 24h cache
 
 ## Extractors — Tier 1 (high-volume, must work)
 - [ ] amazon-in extractor

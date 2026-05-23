@@ -18,6 +18,12 @@ Categories: marketplace, fashion, beauty, grocery, quickcommerce, food, electron
 
 Full registry: [`src/merchants.js`](src/merchants.js).
 
+## Currencies
+
+38 currencies supported with locale-aware formatting, robust parsing of merchant-page strings (handles US `$1,299.00`, EU `1.234,56 €`, INR `₹1,29,999`, JPY no-decimals, etc.), and pinned FX rates for offline conversion.
+
+Full list: [`src/currency.js`](src/currency.js). Refresh rates on demand via `refreshRates()` (uses `open.er-api.com`, no key required).
+
 ## Install (dev)
 
 ```
