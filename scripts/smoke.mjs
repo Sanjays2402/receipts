@@ -35,6 +35,7 @@ await import("../tests/extractors/flipkart.test.mjs");
 await import("../tests/extractors/walmart.test.mjs");
 await import("../tests/extractors/target.test.mjs");
 await import("../tests/extractors/doordash.test.mjs");
+await import("../tests/extractors/ubereats-us.test.mjs");
 await import("../tests/currency.test.mjs");
 if (!fs.existsSync("src/extractors/amazon-in.js")) { console.error("missing src/extractors/amazon-in.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/amazon-us.js")) { console.error("missing src/extractors/amazon-us.js"); process.exit(1); }
@@ -44,4 +45,5 @@ if (!fs.existsSync("src/extractors/flipkart.js")) { console.error("missing src/e
 if (!fs.existsSync("src/extractors/walmart.js")) { console.error("missing src/extractors/walmart.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/target.js")) { console.error("missing src/extractors/target.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/doordash.js")) { console.error("missing src/extractors/doordash.js"); process.exit(1); }
+if (!fs.existsSync("src/extractors/ubereats-us.js")) { console.error("missing src/extractors/ubereats-us.js"); process.exit(1); }
 console.log("\u2713 smoke ok");
