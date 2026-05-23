@@ -14,5 +14,7 @@ if (!fs.existsSync("src/content/common.js")) { console.error("missing src/conten
 for (const m2 of ["amazon","doordash","ubereats","flipkart"]) if (!fs.existsSync(`src/content/${m2}.js`)) { console.error("missing extractor:", m2); process.exit(1); }
 if (!fs.existsSync("src/currency.js")) { console.error("missing src/currency.js"); process.exit(1); }
 if (!fs.existsSync("src/merchants.js")) { console.error("missing src/merchants.js"); process.exit(1); }
+if (!fs.existsSync("src/site-detect.js")) { console.error("missing src/site-detect.js"); process.exit(1); }
+await import("../tests/site-detect.test.mjs");
 await import("../tests/currency.test.mjs");
 console.log("\u2713 smoke ok");

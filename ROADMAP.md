@@ -7,7 +7,7 @@ This file is the agent's task queue. Unchecked items get implemented in order. W
 - [x] Merchant registry: 200 retailers (IN, US, CA, UK) at `src/merchants.js`
 - [x] Wire `host_permissions` from registry
 - [x] Currency support: 38 currencies, formatMoney/parseMoney/convert, pinned FX rates
-- [ ] Site detection helper (match current URL → merchant)
+- [x] Site detection helper (match current URL → merchant)
 - [ ] Generic extractor interface (`extractOrder(document) → Receipt`)
 - [ ] IndexedDB store: `receipts` (id, merchantId, date, total, currency, items[], raw)
 - [ ] Popup: list captured receipts with search + filter (merchant, country, currency, date range)
