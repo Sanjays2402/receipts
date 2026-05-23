@@ -1,8 +1,22 @@
 # Receipts
 
-Auto-extract order info from Amazon, DoorDash, Uber, Flipkart and save to a local ledger.
+200+ merchants across India, USA, Canada, and the UK — auto-extracts line items from order pages into a local, encrypted ledger. Export to CSV/QuickBooks/Xero.
 
-> Status: **v0.1.0 — scaffold**. Features ship every 15 minutes via an autonomous agent. See `ROADMAP.md` for what's next.
+> Status: **v0.2.0** — scaffold + 200-merchant registry wired into manifest host_permissions. Extractors land one merchant per cron run.
+
+## Coverage
+
+| Country | Merchants |
+|---|---|
+| 🇮🇳 India | 51 |
+| 🇺🇸 USA | 53 |
+| 🇨🇦 Canada | 31 |
+| 🇬🇧 UK | 65 |
+| **Total** | **200** |
+
+Categories: marketplace, fashion, beauty, grocery, quickcommerce, food, electronics, pharmacy, travel, books, pets, office, home, furniture, sports, alcohol.
+
+Full registry: [`src/merchants.js`](src/merchants.js).
 
 ## Install (dev)
 
@@ -20,30 +34,11 @@ Then in Chrome: `chrome://extensions` → Developer mode → "Load unpacked" →
 - `scripting`
 - `downloads`
 
-**Host permissions:**
-- `https://www.amazon.com/*`
-- `https://www.amazon.in/*`
-- `https://www.doordash.com/*`
-- `https://www.ubereats.com/*`
-- `https://www.flipkart.com/*`
+**Host permissions:** 200 merchant origins (see manifest.json).
 
 ## Roadmap
 
-- [ ] MV3 manifest + content script scaffolding
-- [ ] Detect order confirmation page on Amazon (US + IN)
-- [ ] Detect order page on DoorDash, UberEats, Flipkart
-- [ ] Extract line items: name, qty, price, total, date, order ID
-- [ ] Store extracted receipts in IndexedDB
-- [ ] Popup: list all captured receipts with search
-- [ ] Filter by merchant, date range, category
-- [ ] Auto-categorize (food, electronics, books, etc.)
-- [ ] Export to CSV
-- [ ] Export to QuickBooks/Xero JSON
-- [ ] Monthly spend summary chart
-- [ ] Manual entry form for non-supported sites
-- [ ] Duplicate detection by order ID
-- [ ] Liquid-glass popup UI
-- [ ] Dark/light theme
+See [ROADMAP.md](ROADMAP.md) — ~150 unchecked items. Agents ship one per 15-minute run.
 
 ## License
 

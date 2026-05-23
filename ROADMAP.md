@@ -2,18 +2,244 @@
 
 This file is the agent's task queue. Unchecked items get implemented in order. When all items are checked, the agent appends a new batch of 10.
 
+## Core (M0)
 - [x] MV3 manifest + content script scaffolding
-- [ ] Detect order confirmation page on Amazon (US + IN)
-- [ ] Detect order page on DoorDash, UberEats, Flipkart
-- [ ] Extract line items: name, qty, price, total, date, order ID
-- [ ] Store extracted receipts in IndexedDB
-- [ ] Popup: list all captured receipts with search
-- [ ] Filter by merchant, date range, category
-- [ ] Auto-categorize (food, electronics, books, etc.)
+- [x] Merchant registry: 200 retailers (IN, US, CA, UK) at `src/merchants.js`
+- [x] Wire `host_permissions` from registry
+- [ ] Site detection helper (match current URL → merchant)
+- [ ] Generic extractor interface (`extractOrder(document) → Receipt`)
+- [ ] IndexedDB store: `receipts` (id, merchantId, date, total, currency, items[], raw)
+- [ ] Popup: list captured receipts with search + filter (merchant, country, date range)
+- [ ] Liquid-glass popup UI (frosted, ambient blob, Phosphor icons)
+- [ ] Dark/light theme parity
+- [ ] Empty state with hand-drawn SVG illustration
+- [ ] Receipt detail drawer with line items, totals, raw HTML
+
+## Extractors — Tier 1 (high-volume, must work)
+- [ ] amazon-in extractor
+- [ ] amazon-us extractor
+- [ ] amazon-uk extractor
+- [ ] amazon-ca extractor
+- [ ] flipkart extractor
+- [ ] walmart extractor
+- [ ] target extractor
+- [ ] doordash extractor
+- [ ] ubereats-us extractor
+- [ ] swiggy extractor
+- [ ] zomato extractor
+- [ ] deliveroo extractor
+- [ ] instacart extractor
+
+## Extractors — Tier 2 (top marketplace per country)
+- [ ] myntra extractor
+- [ ] ajio extractor
+- [ ] meesho extractor
+- [ ] nykaa extractor
+- [ ] tatacliq extractor
+- [ ] bigbasket extractor
+- [ ] blinkit extractor
+- [ ] zepto extractor
+- [ ] best-buy-ca extractor
+- [ ] costco extractor
+- [ ] costco-ca extractor
+- [ ] argos extractor
+- [ ] johnlewis extractor
+- [ ] marksandspencer extractor
+- [ ] next-uk extractor
+- [ ] tesco extractor
+- [ ] sainsburys extractor
+- [ ] asda extractor
+- [ ] ocado extractor
+- [ ] canadian-tire extractor
+- [ ] loblaws extractor
+
+## Features
+- [ ] Auto-categorize line items (food, electronics, books, etc.)
+- [ ] Monthly spend summary chart (sparkline, per-merchant breakdown)
+- [ ] Yearly spend dashboard
 - [ ] Export to CSV
-- [ ] Export to QuickBooks/Xero JSON
-- [ ] Monthly spend summary chart
-- [ ] Manual entry form for non-supported sites
+- [ ] Export to QuickBooks IIF
+- [ ] Export to Xero CSV
+- [ ] Export to JSON
+- [ ] Encrypted backup (.json.enc) with master password
+- [ ] Import encrypted backup
 - [ ] Duplicate detection by order ID
-- [ ] Liquid-glass popup UI
-- [ ] Dark/light theme
+- [ ] Manual entry form for unsupported merchants
+- [ ] Currency normalization (display in user's preferred currency)
+- [ ] Receipt tags (work / personal / reimbursable)
+- [ ] Search across all receipt items
+- [ ] Keyboard shortcut to open popup (Cmd+Shift+R)
+- [ ] Right-click "Save as receipt" on any page
+- [ ] Bulk re-extraction (re-run extractor on all stored raw HTML)
+- [ ] Settings page: master password, theme, default currency, blocklist
+- [ ] Onboarding flow on first install
+- [ ] Demo receipts (one per country) to show off the UI
+
+## Extractors — Tier 3 (long tail)
+- [ ] croma extractor
+- [ ] reliance-digital extractor
+- [ ] lifestyle extractor
+- [ ] shoppers-stop extractor
+- [ ] westside extractor
+- [ ] firstcry extractor
+- [ ] lenskart extractor
+- [ ] mamaearth extractor
+- [ ] purplle extractor
+- [ ] makemytrip extractor
+- [ ] goibibo extractor
+- [ ] yatra extractor
+- [ ] easemytrip extractor
+- [ ] cleartrip extractor
+- [ ] irctc extractor
+- [ ] pharmeasy extractor
+- [ ] 1mg extractor
+- [ ] netmeds extractor
+- [ ] apollo-pharmacy extractor
+- [ ] swiggy-instamart extractor
+- [ ] dunzo extractor
+- [ ] bestbuy extractor
+- [ ] ebay-us extractor
+- [ ] etsy extractor
+- [ ] newegg extractor
+- [ ] wayfair extractor
+- [ ] homedepot extractor
+- [ ] lowes extractor
+- [ ] kohls extractor
+- [ ] macys extractor
+- [ ] nordstrom extractor
+- [ ] sephora extractor
+- [ ] ulta extractor
+- [ ] nike-us extractor
+- [ ] adidas-us extractor
+- [ ] lululemon extractor
+- [ ] gap extractor
+- [ ] oldnavy extractor
+- [ ] uniqlo-us extractor
+- [ ] zara-us extractor
+- [ ] hm-us extractor
+- [ ] asos-us extractor
+- [ ] shein-us extractor
+- [ ] temu extractor
+- [ ] aliexpress extractor
+- [ ] wish extractor
+- [ ] grubhub extractor
+- [ ] postmates extractor
+- [ ] krogerus extractor
+- [ ] wholefoods extractor
+- [ ] traderjoes extractor
+- [ ] safeway extractor
+- [ ] expedia-us extractor
+- [ ] booking-us extractor
+- [ ] airbnb-us extractor
+- [ ] delta extractor
+- [ ] united extractor
+- [ ] southwest extractor
+- [ ] american-airlines extractor
+- [ ] uber extractor
+- [ ] lyft extractor
+- [ ] cvs extractor
+- [ ] walgreens extractor
+- [ ] chewy extractor
+- [ ] petco extractor
+- [ ] staples extractor
+- [ ] barnesnoble extractor
+- [ ] amazon-ca extractor
+- [ ] walmart-ca extractor
+- [ ] indigo extractor
+- [ ] the-bay extractor
+- [ ] sportchek extractor
+- [ ] mec extractor
+- [ ] lululemon-ca extractor
+- [ ] winners extractor
+- [ ] homedepot-ca extractor
+- [ ] rona extractor
+- [ ] ikea-ca extractor
+- [ ] structube extractor
+- [ ] sephora-ca extractor
+- [ ] lcbo extractor
+- [ ] saq extractor
+- [ ] skipthedishes extractor
+- [ ] doordash-ca extractor
+- [ ] ubereats-ca extractor
+- [ ] instacart-ca extractor
+- [ ] metro-ca extractor
+- [ ] sobeys extractor
+- [ ] no-frills extractor
+- [ ] longos extractor
+- [ ] westjet extractor
+- [ ] air-canada extractor
+- [ ] expedia-ca extractor
+- [ ] boots extractor
+- [ ] superdrug extractor
+- [ ] currys extractor
+- [ ] ao-com extractor
+- [ ] very extractor
+- [ ] littlewoods extractor
+- [ ] asos-uk extractor
+- [ ] boohoo extractor
+- [ ] prettylittlething extractor
+- [ ] missguided extractor
+- [ ] newlook-uk extractor
+- [ ] river-island extractor
+- [ ] topshop extractor
+- [ ] primark extractor
+- [ ] matalan extractor
+- [ ] zara-uk extractor
+- [ ] hm-uk extractor
+- [ ] uniqlo-uk extractor
+- [ ] shein-uk extractor
+- [ ] ebay-uk extractor
+- [ ] etsy-uk extractor
+- [ ] morrisons extractor
+- [ ] waitrose extractor
+- [ ] iceland-uk extractor
+- [ ] lidl-uk extractor
+- [ ] justeat-uk extractor
+- [ ] ubereats-uk extractor
+- [ ] british-airways extractor
+- [ ] easyjet extractor
+- [ ] ryanair extractor
+- [ ] expedia-uk extractor
+- [ ] booking-uk extractor
+- [ ] airbnb-uk extractor
+- [ ] thetrainline extractor
+- [ ] ikea-uk extractor
+- [ ] wayfair-uk extractor
+- [ ] made-com extractor
+- [ ] dunelm extractor
+- [ ] wilko extractor
+- [ ] screwfix extractor
+- [ ] bandq extractor
+- [ ] waterstones extractor
+- [ ] wob extractor
+- [ ] lookfantastic extractor
+- [ ] cult-beauty extractor
+- [ ] feel-unique extractor
+- [ ] the-body-shop-uk extractor
+- [ ] petsathome extractor
+- [ ] zooplus-uk extractor
+- [ ] ryman extractor
+- [ ] scan extractor
+- [ ] overclockers extractor
+- [ ] ebuyer extractor
+- [ ] costco-uk extractor
+- [ ] selfridges extractor
+- [ ] urban-ladder extractor
+- [ ] pepperfry extractor
+- [ ] ikea-in extractor
+- [ ] bookswagon extractor
+- [ ] heads-up-for-tails extractor
+- [ ] boat-lifestyle extractor
+- [ ] limeroad extractor
+- [ ] tira-beauty extractor
+- [ ] udaan extractor
+- [ ] country-delight extractor
+- [ ] nykaa-fashion extractor
+- [ ] puma-in extractor
+- [ ] nike-in extractor
+- [ ] adidas-in extractor
+- [ ] decathlon-in extractor
+- [ ] snapdeal extractor
+- [ ] ixigo extractor
+- [ ] vijay-sales extractor
+- [ ] grubhub extractor (recheck)
