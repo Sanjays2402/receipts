@@ -20,6 +20,8 @@
 //
 // Exports also expose the pure helpers for tests.
 
+import { convertedView } from "./popup-display-currency.js";
+
 const SVG_NS = "http://www.w3.org/2000/svg";
 
 // ── pure helpers (exported) ──────────────────────────────────────────────
@@ -110,6 +112,13 @@ export function createReceiptDrawer(opts = {}) {
   const container = opts.container || doc.body;
   const getMerchant = opts.getMerchant || (() => undefined);
   const fmtMoney = opts.formatMoney || ((a, c) => `${c} ${Number(a).toFixed(2)}`);
+  let displayCurrency = opts.displayCurrency || null;
+
+  function fmtConverted(amount, currency) {
+    const v = convertedView(amount, currency, displayCurrency);
+    if (!v) return "";
+    return `\u2248 ${fmtMoney(v.amount, v.currency)}`;
+  }
 
   let returnFocusEl = null;
   let titleId = `receipts-drawer-title-${Math.random().toString(36).slice(2, 8)}`;
@@ -209,6 +218,12 @@ export function createReceiptDrawer(opts = {}) {
         unit != null && line != null && qty && qty !== 1
           ? el(doc, "span", { class: "item-unit" }, `${fmtMoney(unit, currency)} ea`)
           : null,
+        (() => {
+          const base = line != null ? line : unit;
+          if (base == null) return null;
+          const text = fmtConverted(base, currency);
+          return text ? el(doc, "span", { class: "item-converted" }, text) : null;
+        })(),
       );
 
       list.appendChild(el(doc, "li", { class: "drawer-item" }, nameNode, priceNode));
@@ -224,7 +239,12 @@ export function createReceiptDrawer(opts = {}) {
       rows.appendChild(el(doc, "dd", {}, fmtMoney(sub, receipt.currency)));
     }
     rows.appendChild(el(doc, "dt", { class: "is-grand" }, "Total"));
-    rows.appendChild(el(doc, "dd", { class: "is-grand" }, fmtMoney(receipt.total, receipt.currency)));
+    const grandValue = el(doc, "dd", { class: "is-grand" }, fmtMoney(receipt.total, receipt.currency));
+    const convertedText = fmtConverted(receipt.total, receipt.currency);
+    if (convertedText) {
+      grandValue.appendChild(el(doc, "span", { class: "is-grand-converted" }, convertedText));
+    }
+    rows.appendChild(grandValue);
     return rows;
   }
 
@@ -296,5 +316,5 @@ export function createReceiptDrawer(opts = {}) {
 
   function isOpen() { return !drawer.hasAttribute("hidden"); }
 
-  return { element: drawer, backdrop, open, close, isOpen };
+  return { element: drawer, backdrop, open, close, isOpen, setDisplayCurrency(c) { displayCurrency = c || null; } };
 }

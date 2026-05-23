@@ -270,6 +270,14 @@ body[data-theme="light"] .card:hover { background: rgba(255, 255, 255, 0.85); }
 .card-line1 { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
 .card-merchant { font-weight: 600; letter-spacing: -0.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .card-total { font-variant-numeric: tabular-nums; font-weight: 600; flex-shrink: 0; }
+.card-totals { display: flex; flex-direction: column; align-items: flex-end; flex-shrink: 0; line-height: 1.2; }
+.card-total-converted {
+  font-variant-numeric: tabular-nums;
+  font-size: 10.5px;
+  color: var(--fg-muted);
+  margin-top: 1px;
+  letter-spacing: -0.01em;
+}
 .card-line2 { display: flex; align-items: center; gap: 8px; font-size: 11px; opacity: 0.65; margin-top: 2px; }
 .card-line2 .dot { width: 3px; height: 3px; border-radius: 50%; background: currentColor; opacity: 0.5; }
 
@@ -436,6 +444,11 @@ body[data-theme="light"] .card:hover { background: rgba(255, 255, 255, 0.85); }
   color: var(--fg-muted);
   font-size: 10.5px;
 }
+.item-converted {
+  color: var(--fg-muted);
+  font-size: 10.5px;
+  font-variant-numeric: tabular-nums;
+}
 .drawer-empty {
   color: var(--fg-muted);
   font-size: 12px;
@@ -475,6 +488,14 @@ body[data-theme="light"] .card:hover { background: rgba(255, 255, 255, 0.85); }
   padding-top: 6px;
   border-top: 1px solid var(--hairline-soft);
   margin-top: 2px;
+}
+.is-grand-converted {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--fg-muted);
+  margin-top: 2px;
+  letter-spacing: -0.01em;
 }
 
 .drawer-raw {
