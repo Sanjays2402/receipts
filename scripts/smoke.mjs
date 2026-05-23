@@ -22,5 +22,6 @@ await import("../tests/extractor.test.mjs");
 await import("../tests/store.test.mjs");
 await import("../tests/popup-filters.test.mjs");
 await import("../tests/popup-empty.test.mjs");
+await import("../tests/popup-drawer.test.mjs");
 await import("../tests/currency.test.mjs");
 console.log("\u2713 smoke ok");

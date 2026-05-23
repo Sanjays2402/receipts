@@ -8,8 +8,10 @@ import {
   buildStoreFilter,
 } from "./popup-filters.js";
 import { createEmptyState } from "./popup-empty.js";
+import { createReceiptDrawer } from "./popup-drawer.js";
 
 const store = createStore();
+let drawer = null;
 const ui = { q: "", merchantId: "*", country: "*", currency: "*", dateFrom: "", dateTo: "" };
 let searchTimer = null;
 
@@ -61,7 +63,12 @@ function renderCard(r) {
   const dateText = fmtDate(r.date);
   const total = fmtMoney(r.total, r.currency);
 
-  return el("article", { class: "card", role: "button", tabindex: "0", dataset: { id: r.id } },
+  const onActivate = (e) => {
+    if (e.type === "keydown" && e.key !== "Enter" && e.key !== " ") return;
+    if (e.type === "keydown") e.preventDefault();
+    if (drawer) drawer.open(r, { returnFocus: e.currentTarget });
+  };
+  return el("article", { class: "card", role: "button", tabindex: "0", dataset: { id: r.id }, onclick: onActivate, onkeydown: onActivate },
     el("div", { class: "card-icon", "aria-hidden": "true" }, initials(name)),
     el("div", { class: "card-body" },
       el("div", { class: "card-line1" },
@@ -199,6 +206,11 @@ function applyTheme(theme, persist) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  drawer = createReceiptDrawer({
+    container: document.body,
+    getMerchant: (id) => MERCHANTS_BY_ID[id],
+    formatMoney: fmtMoney,
+  });
   bind();
   refresh().catch((err) => {
     console.error("[receipts] refresh failed", err);
