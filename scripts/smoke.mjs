@@ -45,6 +45,7 @@ await import("../tests/extractors/ajio.test.mjs");
 await import("../tests/extractors/meesho.test.mjs");
 await import("../tests/extractors/nykaa.test.mjs");
 await import("../tests/extractors/tatacliq.test.mjs");
+await import("../tests/extractors/bigbasket.test.mjs");
 await import("../tests/currency.test.mjs");
 if (!fs.existsSync("src/extractors/amazon-in.js")) { console.error("missing src/extractors/amazon-in.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/amazon-us.js")) { console.error("missing src/extractors/amazon-us.js"); process.exit(1); }
@@ -64,4 +65,5 @@ if (!fs.existsSync("src/extractors/ajio.js")) { console.error("missing src/extra
 if (!fs.existsSync("src/extractors/meesho.js")) { console.error("missing src/extractors/meesho.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/nykaa.js")) { console.error("missing src/extractors/nykaa.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/tatacliq.js")) { console.error("missing src/extractors/tatacliq.js"); process.exit(1); }
+if (!fs.existsSync("src/extractors/bigbasket.js")) { console.error("missing src/extractors/bigbasket.js"); process.exit(1); }
 console.log("\u2713 smoke ok");
