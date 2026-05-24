@@ -42,7 +42,7 @@ This file is the agent's task queue. Unchecked items get implemented in order. W
 - [x] bigbasket extractor
 - [x] blinkit extractor
 - [x] zepto extractor
-- [ ] best-buy-ca extractor
+- [x] best-buy-ca extractor
 - [ ] costco extractor
 - [ ] costco-ca extractor
 - [ ] argos extractor

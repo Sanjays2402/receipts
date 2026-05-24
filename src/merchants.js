@@ -137,7 +137,7 @@ export const MERCHANTS = [
   { id: "loblaws", name: "Loblaws", country: "CA", category: "grocery", hostPattern: "https://www.loblaws.ca/*", orderUrlPattern: "/orders*", status: "planned" },
   { id: "shoppers-drug-mart", name: "Shoppers Drug Mart", country: "CA", category: "pharmacy", hostPattern: "https://www.shoppersdrugmart.ca/*", orderUrlPattern: "/account/orders*", status: "planned" },
   { id: "indigo", name: "Indigo", country: "CA", category: "books", hostPattern: "https://www.indigo.ca/*", orderUrlPattern: "/en-ca/account/order-history*", status: "planned" },
-  { id: "best-buy-ca", name: "Best Buy Canada", country: "CA", category: "electronics", hostPattern: "https://www.bestbuy.ca/*", orderUrlPattern: "/profile/orderhistory*", status: "planned" },
+  { id: "best-buy-ca", name: "Best Buy Canada", country: "CA", category: "electronics", hostPattern: "https://www.bestbuy.ca/*", orderUrlPattern: "/profile/orderhistory*", status: "supported" },
   { id: "the-bay", name: "The Bay", country: "CA", category: "fashion", hostPattern: "https://www.thebay.com/*", orderUrlPattern: "/account/orders*", status: "planned" },
   { id: "sportchek", name: "Sport Chek", country: "CA", category: "sports", hostPattern: "https://www.sportchek.ca/*", orderUrlPattern: "/order-history*", status: "planned" },
   { id: "mec", name: "MEC", country: "CA", category: "sports", hostPattern: "https://www.mec.ca/*", orderUrlPattern: "/account/orders*", status: "planned" },
