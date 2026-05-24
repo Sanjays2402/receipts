@@ -49,6 +49,7 @@ await import("../tests/extractors/bigbasket.test.mjs");
 await import("../tests/extractors/blinkit.test.mjs");
 await import("../tests/extractors/zepto.test.mjs");
 await import("../tests/extractors/best-buy-ca.test.mjs");
+await import("../tests/extractors/costco.test.mjs");
 await import("../tests/currency.test.mjs");
 if (!fs.existsSync("src/extractors/amazon-in.js")) { console.error("missing src/extractors/amazon-in.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/amazon-us.js")) { console.error("missing src/extractors/amazon-us.js"); process.exit(1); }
@@ -72,4 +73,5 @@ if (!fs.existsSync("src/extractors/bigbasket.js")) { console.error("missing src/
 if (!fs.existsSync("src/extractors/blinkit.js")) { console.error("missing src/extractors/blinkit.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/zepto.js")) { console.error("missing src/extractors/zepto.js"); process.exit(1); }
 if (!fs.existsSync("src/extractors/best-buy-ca.js")) { console.error("missing src/extractors/best-buy-ca.js"); process.exit(1); }
+if (!fs.existsSync("src/extractors/costco.js")) { console.error("missing src/extractors/costco.js"); process.exit(1); }
 console.log("\u2713 smoke ok");
