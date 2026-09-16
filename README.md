@@ -18,6 +18,23 @@ Categories: marketplace, fashion, beauty, grocery, quickcommerce, food, electron
 
 Full registry: [`src/merchants.js`](src/merchants.js).
 
+## Implemented extractors
+
+24 of 200 merchants have working DOM extractors (status `supported` in
+the registry); the rest are scaffolded for one-per-run landing:
+
+- 🇮🇳 Amazon India, Flipkart, Myntra, Ajio, Meesho, Tata CLiQ, Nykaa,
+  BigBasket, Blinkit, Zepto, Swiggy, Zomato, **Snapdeal**
+- 🇺🇸 Amazon US, Walmart, Target, DoorDash, Instacart, Uber Eats
+- 🇬🇧 Amazon UK, Deliveroo
+- 🇨🇦 Amazon CA, Best Buy CA, Costco
+
+Each extractor exposes `matches(url)` and `extract(doc, ctx)` returning
+a canonical partial receipt (`merchantId`, ISO `date`, `total`,
+currency, line `items`); `src/extractor.js` validates and normalizes the
+result. Unit tests live in `tests/extractors/<merchant>.test.mjs` and
+run as part of `npm test`.
+
 ## Currencies
 
 38 currencies supported with locale-aware formatting, robust parsing of merchant-page strings (handles US `$1,299.00`, EU `1.234,56 €`, INR `₹1,29,999`, JPY no-decimals, etc.), and pinned FX rates for offline conversion.
